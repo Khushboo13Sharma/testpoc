@@ -24,7 +24,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: cat ./testpoc/testfile
+        scriptString: cat testpoc/testfile
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
