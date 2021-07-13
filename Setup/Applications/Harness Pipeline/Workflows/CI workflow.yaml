@@ -27,7 +27,7 @@ phases:
         scriptString: |
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
           cd /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c
-          commit_message=`git log -2 --pretty=%B`
+          commit_message=`git log -1 --pretty=%B`
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRef: null
