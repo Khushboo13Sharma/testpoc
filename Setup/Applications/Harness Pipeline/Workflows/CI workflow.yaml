@@ -47,7 +47,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: echo ${commit_message}
+        scriptString: echo ${context.com.commit_message}
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
