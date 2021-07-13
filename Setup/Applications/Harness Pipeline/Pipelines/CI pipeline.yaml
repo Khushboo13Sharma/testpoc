@@ -8,10 +8,3 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: CI workflow
-- type: ENV_STATE
-  name: post-merge workflow
-  parallel: false
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 2
-  workflowName: post-merge workflow
