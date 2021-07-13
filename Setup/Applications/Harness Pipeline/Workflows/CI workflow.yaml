@@ -22,14 +22,15 @@ phases:
         connectionAttributes: null
         executeOnDelegate: true
         host: null
-        outputVars: ''
+        outputVars: commit_message
         publishAsVar: false
-        scriptString: |-
+        scriptString: |
+          echo "hello"
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
           cd /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c
-          #git log -1 --pretty=%B
-          git log -n
+          commit_message=`git log -1 --pretty=%B`
         scriptType: BASH
+        secretOutputVars: ''
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
