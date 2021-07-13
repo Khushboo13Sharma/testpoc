@@ -16,7 +16,7 @@ phases:
     name: Prepare Steps
     steps:
     - type: SHELL_SCRIPT
-      name: pre_merge build
+      name: post_merge build
       properties:
         commandPath: null
         connectionAttributes: null
