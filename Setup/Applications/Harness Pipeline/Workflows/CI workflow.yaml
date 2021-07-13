@@ -31,7 +31,7 @@ phases:
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRef: null
-        sweepingOutputName: commit
+        sweepingOutputName: com
         sweepingOutputScope: WORKFLOW
         templateExpressions: null
         templateUuid: null
