@@ -23,7 +23,7 @@ phases:
         executeOnDelegate: true
         host: null
         outputVars: commit_message
-        publishAsVar: false
+        publishAsVar: true
         scriptString: |
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
           cd /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c
@@ -31,8 +31,8 @@ phases:
         scriptType: BASH
         secretOutputVars: ''
         sshKeyRef: null
-        sweepingOutputName: null
-        sweepingOutputScope: null
+        sweepingOutputName: commit
+        sweepingOutputScope: PIPELINE
         templateExpressions: null
         templateUuid: null
         templateVariables: null
