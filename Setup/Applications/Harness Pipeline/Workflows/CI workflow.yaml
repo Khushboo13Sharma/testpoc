@@ -36,7 +36,7 @@ phases:
         templateVariables: ''
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: pre_merge build
+      name: CI build
       properties:
         commandPath: null
         connectionAttributes: null
