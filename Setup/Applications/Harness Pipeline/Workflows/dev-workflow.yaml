@@ -24,7 +24,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: true
-        scriptString: echo $JIRA_ISSUE
+        scriptString: echo ${JIRA_ISSUE}
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: commit
