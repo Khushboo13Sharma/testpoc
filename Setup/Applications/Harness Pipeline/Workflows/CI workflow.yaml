@@ -47,13 +47,15 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: echo ${context.commit.commit_message}
+        scriptString: echo ${commit_message}
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
