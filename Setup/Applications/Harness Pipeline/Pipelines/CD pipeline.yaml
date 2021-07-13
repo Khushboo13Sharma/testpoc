@@ -8,10 +8,3 @@ pipelineStages:
     type: DO_NOT_SKIP
   stageName: STAGE 1
   workflowName: dev-workflow
-- type: ENV_STATE
-  name: JIRA State Change
-  parallel: false
-  skipCondition:
-    type: DO_NOT_SKIP
-  stageName: STAGE 2
-  workflowName: JIRA State Change
