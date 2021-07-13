@@ -36,7 +36,7 @@ phases:
         templateVariables: ''
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Shell Script
+      name: pre_merge build
       properties:
         commandPath: null
         connectionAttributes: null
@@ -44,9 +44,9 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: |
+        scriptString: |+
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
-          echo "hello"
+
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
