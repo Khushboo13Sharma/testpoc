@@ -126,6 +126,23 @@ phases:
         templateExpressions: null
         templateVariables: ''
         timeoutMillis: 60000
+    - type: JIRA_CREATE_UPDATE
+      name: Jira state change post pre_merge CI
+      properties:
+        comment: ''
+        customFields: null
+        description: ''
+        issueId: ${regex.extract("^[A-Z]+-[0-9]*", ${context.commit.message})}
+        issueType: Story
+        jiraAction: UPDATE_TICKET
+        jiraConnectorId: QGvLrB0sSTqCNhL8bId2qQ
+        labels:
+        - ''
+        priority: null
+        project: HAR
+        publishAsVar: false
+        status: ''
+        summary: ''
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
