@@ -24,7 +24,9 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
+        scriptString: |-
+          cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
+          git log -1 --pretty=%B
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: null
