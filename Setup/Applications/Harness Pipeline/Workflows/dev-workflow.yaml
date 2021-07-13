@@ -24,9 +24,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: true
-        scriptString: |-
-          echo ${app.defaults.JIRA_ISSUE}
-          echo ${app.defaults.BACKUP_PATH}
+        scriptString: echo ${app.defaults.JIRA_ISSUE}
         scriptType: BASH
         sshKeyRef: null
         sweepingOutputName: commit
