@@ -14,6 +14,24 @@ phases:
   phaseSteps:
   - type: PREPARE_STEPS
     name: Prepare Steps
+    steps:
+    - type: JIRA_CREATE_UPDATE
+      name: Jira
+      properties:
+        comment: ''
+        customFields: null
+        description: ''
+        issueId: ${regex.extract("^[A-Z]+-[0-9]*", ${context.commit.message})}
+        issueType: Story
+        jiraAction: UPDATE_TICKET
+        jiraConnectorId: QGvLrB0sSTqCNhL8bId2qQ
+        labels:
+        - ''
+        priority: null
+        project: HAR
+        publishAsVar: false
+        status: In Progress
+        summary: ''
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
