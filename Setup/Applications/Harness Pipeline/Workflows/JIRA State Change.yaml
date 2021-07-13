@@ -29,9 +29,14 @@ phases:
         - ''
         priority: null
         project: HAR
-        publishAsVar: false
+        publishAsVar: true
         status: In Progress
         summary: ''
+        sweepingOutputName: Issue_key
+        sweepingOutputScope: PIPELINE
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
