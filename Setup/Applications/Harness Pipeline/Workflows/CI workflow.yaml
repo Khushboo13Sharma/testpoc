@@ -32,7 +32,7 @@ phases:
         secretOutputVars: ''
         sshKeyRef: null
         sweepingOutputName: com
-        sweepingOutputScope: PIPELINE
+        sweepingOutputScope: PHASE
         templateExpressions: null
         templateUuid: null
         templateVariables: null
