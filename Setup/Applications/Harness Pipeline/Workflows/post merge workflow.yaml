@@ -37,7 +37,7 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: unit test
+      name: unit & integration test
       properties:
         commandPath: null
         connectionAttributes: null
@@ -51,7 +51,9 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
       name: Code quality scan_Sonarqube
