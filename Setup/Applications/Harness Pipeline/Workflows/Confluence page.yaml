@@ -65,10 +65,5 @@ userVariables:
 - type: TEXT
   fixed: false
   mandatory: false
-  name: Approver
-  value: Trapthy
-- type: TEXT
-  fixed: false
-  mandatory: false
   name: JIRA_ISSUE
   value: HAR-44
