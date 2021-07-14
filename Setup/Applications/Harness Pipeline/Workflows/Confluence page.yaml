@@ -57,7 +57,6 @@ userVariables:
   fixed: false
   mandatory: false
   name: Page_version
-  value: '17'
 - type: TEXT
   fixed: false
   mandatory: false
@@ -67,7 +66,7 @@ userVariables:
   fixed: false
   mandatory: false
   name: Approver
-  value: trapthyshetty@gmail.com
+  value: Trapthy
 - type: TEXT
   fixed: false
   mandatory: false
