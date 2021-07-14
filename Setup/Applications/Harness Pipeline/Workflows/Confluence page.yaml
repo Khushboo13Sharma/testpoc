@@ -57,15 +57,19 @@ userVariables:
   fixed: false
   mandatory: false
   name: Page_version
+  value: '15'
 - type: TEXT
   fixed: false
   mandatory: false
   name: Release_version
+  value: v1.1
 - type: TEXT
   fixed: false
   mandatory: false
   name: Approver
+  value: Trapthy
 - type: TEXT
   fixed: false
   mandatory: false
   name: JIRA_ISSUE
+  value: HAR-44
