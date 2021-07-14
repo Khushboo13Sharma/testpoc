@@ -21,9 +21,9 @@ phases:
         assertion: ''
         body: |-
           {"type":"page","title":"New Release page",
-          "space":{"key":"TEST"},"body":{"storage":{"value":"<at:declarations><at:string at:name=\"Release_version\" /><at:string at:name=\"JIRA_ISSUE\" /><at:string at:name=\"Approver\" /></at:declarations><ac:structured-macro ac:name=\"info\" ac:schema-version=\"1\" ac:macro-id=\"fe2cacde-afa3-486e-8ec9-d3d343399565\"><ac:rich-text-body><p>Release Information</p><p>State: <ac:structured-macro ac:name=\"status\" ac:schema-version=\"1\" ac:macro-id=\"2978535c-be13-47cb-abc2-871fece344b5\"><ac:parameter ac:name=\"title\">Completed</ac:parameter><ac:parameter ac:name=\"colour\">Green</ac:parameter></ac:structured-macro> </p><p>Date: <time datetime=\"2021-07-14\" /> </p><p>Version:  <at:var at:name=\"Release_version\" /></p><p>Issues linked: <a style=\"text-decoration: underline;\" href=\"https://harnessdemo.atlassian.net/browse/HAR-44\">HAR-44</a></p><p>Approver: trapthyshety@gmail.com</p></ac:rich-text-body></ac:structured-macro><p />","representation":
+          "space":{"key":"TEST"},"body":{"storage":{"value":"<at:declarations><at:string at:name=\"Release_version\" /><at:string at:name=\"JIRA_ISSUE\" /><at:string at:name=\"Approver\" /></at:declarations><ac:structured-macro ac:name=\"info\" ac:schema-version=\"1\" ac:macro-id=\"fe2cacde-afa3-486e-8ec9-d3d343399565\"><ac:rich-text-body><p>Release Information</p><p>State: <ac:structured-macro ac:name=\"status\" ac:schema-version=\"1\" ac:macro-id=\"2978535c-be13-47cb-abc2-871fece344b5\"><ac:parameter ac:name=\"title\">Completed</ac:parameter><ac:parameter ac:name=\"colour\">Green</ac:parameter></ac:structured-macro> </p><p>Date: <time datetime=\"2021-07-14\" /> </p><p>Version:  ${workflow.variables.Release_version}</p><p>Issues linked: <a style=\"text-decoration: underline;\" href=\"https://harnessdemo.atlassian.net/browse/${workflow.variables.JIRA_ISSUE}\">${workflow.variables.JIRA_ISSUE}</a></p><p>${workflow.variables.Approver}</p></ac:rich-text-body></ac:structured-macro><p />","representation":
           "storage"}},
-          "version":{"number":14}}
+          "version":{"number":${workflow.variables.Page_version}}
         executeWithPreviousSteps: false
         headers:
         - key: Content-Type
@@ -36,7 +36,9 @@ phases:
         sweepingOutputName: null
         sweepingOutputScope: null
         tags: null
-        templateVariables: ''
+        templateUuid: null
+        templateVariables: null
+        templateVersion: null
         timeoutMillis: 10000
         url: https://harnessdemo.atlassian.net/wiki/rest/api/content/46006306
         useProxy: false
