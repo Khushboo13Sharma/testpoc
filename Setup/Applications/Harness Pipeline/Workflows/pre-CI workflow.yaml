@@ -6,8 +6,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - qt7LQdIMTqyDJMauq1jByg
+  userGroupNames:
+  - Account Administrator
 phases:
 - daemonSet: false
   name: Phase 1
@@ -19,7 +19,7 @@ phases:
       name: Fetch latest commit message
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: message
@@ -29,7 +29,7 @@ phases:
           message=`git log -n1 --pretty=%B`
         scriptType: BASH
         secretOutputVars: ''
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: commit
         sweepingOutputScope: PIPELINE
         templateExpressions: null
@@ -39,7 +39,7 @@ phases:
       name: pre_merge build
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
@@ -48,7 +48,7 @@ phases:
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
 
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -60,14 +60,14 @@ phases:
       name: unit & integration test
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo "unit test"
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -79,14 +79,14 @@ phases:
       name: Code quality scan_Sonarqube
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo "Code quality scan_Sonarqube"
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -96,14 +96,14 @@ phases:
       name: Smoke testing
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo "Smoke testing"
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -113,14 +113,14 @@ phases:
       name: Security testing
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo "Security testing"
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -135,7 +135,7 @@ phases:
         issueId: ${regex.extract("^[A-Z]+-[0-9]*", ${context.commit.message})}
         issueType: Story
         jiraAction: UPDATE_TICKET
-        jiraConnectorId: QGvLrB0sSTqCNhL8bId2qQ
+        jiraConnectorName: jira
         labels:
         - ''
         priority: null

@@ -6,8 +6,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - qt7LQdIMTqyDJMauq1jByg
+  userGroupNames:
+  - Account Administrator
 phases:
 - daemonSet: false
   name: Phase 1
@@ -24,7 +24,7 @@ phases:
         issueId: ${regex.extract("^[A-Z]+-[0-9]*", ${context.commit.message})}
         issueType: Story
         jiraAction: UPDATE_TICKET
-        jiraConnectorId: QGvLrB0sSTqCNhL8bId2qQ
+        jiraConnectorName: jira
         labels:
         - ''
         priority: null

@@ -6,8 +6,8 @@ notificationRules:
   executionScope: WORKFLOW
   notificationGroupAsExpression: false
   userGroupAsExpression: false
-  userGroupIds:
-  - qt7LQdIMTqyDJMauq1jByg
+  userGroupNames:
+  - Account Administrator
 phases:
 - daemonSet: false
   name: Phase 1
@@ -19,14 +19,14 @@ phases:
       name: Fetch latest commit
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: true
         scriptString: echo ${app.defaults.JIRA_ISSUE}
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: commit
         sweepingOutputScope: PIPELINE
         templateExpressions: null
@@ -38,7 +38,7 @@ phases:
       name: Deployment to dev
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
@@ -47,7 +47,7 @@ phases:
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
         scriptType: BASH
         secretOutputVars: ''
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
@@ -59,14 +59,14 @@ phases:
       name: Functional tests execution
       properties:
         commandPath: null
-        connectionAttributes: null
+        connectionAttributeName: null
         executeOnDelegate: true
         host: null
         outputVars: ''
         publishAsVar: false
         scriptString: echo "execute functional test cases"
         scriptType: BASH
-        sshKeyRef: null
+        sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
         templateExpressions: null
