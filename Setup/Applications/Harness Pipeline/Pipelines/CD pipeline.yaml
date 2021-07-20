@@ -12,6 +12,7 @@ pipelineStages:
   name: Approval 1
   parallel: false
   properties:
+    workflowVariables: null
     approvalStateParams:
       serviceNowApprovalParams:
         approval:
@@ -38,3 +39,10 @@ pipelineStages:
   skipCondition:
     type: DO_NOT_SKIP
   stageName: STAGE 2
+- type: ENV_STATE
+  name: pre-CI workflow
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
+  workflowName: pre-CI workflow
