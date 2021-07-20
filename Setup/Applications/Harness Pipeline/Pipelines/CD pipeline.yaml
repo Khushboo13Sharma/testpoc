@@ -5,13 +5,12 @@ pipelineStages:
   name: Approval 0
   parallel: false
   properties:
-    workflowVariables: null
     approvalStateParams:
       serviceNowApprovalParams:
         approval:
           conditions:
             state:
-            - Assess
+            - Scheduled
             approval:
             - Approved
           operator: AND
