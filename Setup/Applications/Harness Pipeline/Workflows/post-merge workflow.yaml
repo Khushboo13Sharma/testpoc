@@ -16,26 +16,7 @@ phases:
     name: Prepare Steps
     steps:
     - type: SHELL_SCRIPT
-      name: Fetch latest commit
-      properties:
-        commandPath: null
-        connectionAttributeName: null
-        executeOnDelegate: true
-        host: null
-        outputVars: ''
-        publishAsVar: true
-        scriptString: echo ${app.defaults.JIRA_ISSUE}
-        scriptType: BASH
-        sshKeyRefName: null
-        sweepingOutputName: commit
-        sweepingOutputScope: PIPELINE
-        templateExpressions: null
-        templateUuid: null
-        templateVariables: null
-        templateVersion: null
-        timeoutMillis: 60000
-    - type: SHELL_SCRIPT
-      name: Deployment to dev
+      name: pre_merge build
       properties:
         commandPath: null
         connectionAttributeName: null
@@ -43,10 +24,10 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: |
+        scriptString: |+
           cat /opt/harness-delegate/repository/yaml/7iFUO-dWRTSstIlqaY6BoQ/tgk_zqhlTSKM2LL0NIAFAw/testpoc/06ab42bec2126f77836fe271068379fd367c1c9c/testfile
+
         scriptType: BASH
-        secretOutputVars: ''
         sshKeyRefName: null
         sweepingOutputName: null
         sweepingOutputScope: null
@@ -56,7 +37,7 @@ phases:
         templateVersion: null
         timeoutMillis: 60000
     - type: SHELL_SCRIPT
-      name: Functional tests execution
+      name: unit & integration test
       properties:
         commandPath: null
         connectionAttributeName: null
@@ -64,7 +45,7 @@ phases:
         host: null
         outputVars: ''
         publishAsVar: false
-        scriptString: echo "execute functional test cases"
+        scriptString: echo "unit test"
         scriptType: BASH
         sshKeyRefName: null
         sweepingOutputName: null
@@ -73,6 +54,57 @@ phases:
         templateUuid: null
         templateVariables: null
         templateVersion: null
+        timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Code quality scan_Sonarqube
+      properties:
+        commandPath: null
+        connectionAttributeName: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: echo "Code quality scan_Sonarqube"
+        scriptType: BASH
+        sshKeyRefName: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Smoke testing
+      properties:
+        commandPath: null
+        connectionAttributeName: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: echo "Smoke testing"
+        scriptType: BASH
+        sshKeyRefName: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
+        timeoutMillis: 60000
+    - type: SHELL_SCRIPT
+      name: Security testing
+      properties:
+        commandPath: null
+        connectionAttributeName: null
+        executeOnDelegate: true
+        host: null
+        outputVars: ''
+        publishAsVar: false
+        scriptString: echo "Security testing"
+        scriptType: BASH
+        sshKeyRefName: null
+        sweepingOutputName: null
+        sweepingOutputScope: null
+        templateExpressions: null
+        templateVariables: ''
         timeoutMillis: 60000
     stepsInParallel: false
   - type: COLLECT_ARTIFACT

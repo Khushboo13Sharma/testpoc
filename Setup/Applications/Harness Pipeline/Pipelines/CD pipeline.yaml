@@ -1,0 +1,55 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: APPROVAL
+  name: Approval 0
+  parallel: false
+  properties:
+    workflowVariables: null
+    approvalStateParams:
+      serviceNowApprovalParams:
+        approval:
+          conditions:
+            state:
+            - Scheduled
+            approval:
+            - Approved
+          operator: AND
+        rejection:
+          conditions:
+            state:
+            - Canceled
+          operator: AND
+        ticketType: CHANGE_REQUEST
+        changeWindowPresent: false
+        changeWindowStartField: ''
+        changeWindowEndField: ''
+        issueNumber: CHG0030001
+        snowConnectorName: snow
+    stageName: STAGE 2
+    timeoutMillis: 86400000
+    approvalStateType: SERVICENOW
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+- type: ENV_STATE
+  name: test-workflow
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: test-workflow
+- type: APPROVAL
+  name: Approval 2
+  parallel: false
+  properties:
+    userGroups:
+    - Account Administrator
+    variables: null
+    stageName: STAGE 3
+    timeoutMillis: 86400000
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 3
